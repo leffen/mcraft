@@ -9,7 +9,7 @@ require "capistrano_colors"
 set :application, "mcraft"
 
 set :scm, :git
-set :repository, "xxxx"
+set :repository, "git@github.com:leffen/mcraft.git"
 set :branch, "master"
 
 
