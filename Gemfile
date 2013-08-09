@@ -23,11 +23,12 @@ gem 'jquery-rails'
 
 gem 'therubyracer', require: 'v8'
 gem 'thin'
+gem 'devise', "3.0.1"
 
 
 gem 'jquery-rails'
 gem "jquery-ui-rails"
-gem "bootstrap-sass", "~> 2.3.1.2"
+gem "bootstrap-sass", "~> 2.3.2.1"
 gem 'bourbon'
 gem "font-awesome-sass-rails", "~> 3.0.2.2"
 gem "simple_form"
@@ -75,8 +76,6 @@ group :development do
   gem "letter_opener", "~> 1.1.1"
   gem "quiet_assets", "~> 1.0.2"
 
-  gem 'librarian', '>= 0.0.25', require: false
-  gem 'librarian-chef'
 end
 
 group :test, :development do

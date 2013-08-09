@@ -55,6 +55,7 @@ production:
   adapter: postgresql
   encoding: unicode
   database: mcraft_production
+  host: localhost
   pool: 5
   username: mcraft
   password:  '_BortiGranskauen2012_'
