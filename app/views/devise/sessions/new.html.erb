@@ -7,10 +7,10 @@
 
 <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name),:html => {:class => 'form-horizontal' }) do |f| %>
   <div class="control-group">
-    <%= f.input :email, :required => false, :autofocus => true %>
-    <%= f.input :password, :required => false %>
-    <%= f.input :remember_me, :as => :boolean if devise_mapping.rememberable? %>
-    <%= f.button :submit, "Sign in", :class => 'btn-large btn-primary' %>
+    <%= f.input :email, :required => false, :autofocus => true, :label => 'Epost' %>
+    <%= f.input :password, :required => false, :label => 'Passord' %>
+    <%= f.input :remember_me,:label => 'Husk meg', :as => :boolean if devise_mapping.rememberable? %>
+    <%= f.button :submit, "Login", :class => 'btn-large btn-primary' %>
   </div>
 
 
