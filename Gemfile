@@ -70,6 +70,8 @@ group :test do
   gem "database_cleaner"
   gem "email_spec"
   gem "shoulda-matchers"
+  gem 'faker'
+  gem 'factory_girl'
 end
 
 group :development do

@@ -1,5 +1,12 @@
 require 'spec_helper'
 
 describe User do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  it "should be able to add a new record" do
+
+    u = FactoryGirl.create(:user)
+
+  end
+
+
 end

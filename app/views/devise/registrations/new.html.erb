@@ -1,24 +1,31 @@
-<div class="container">
+<div class="container top_container">
   <div class="row">
     <div class="span6">
 
       <h2>Registrering</h2>
 
-      <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name),:html => {:class => 'form-horizontal' }) do |f| %>
+      <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-horizontal'}) do |f| %>
           <%= f.error_notification %>
 
           <div class="control-group">
-            <%= f.input :email, :required => true,:label => 'Epost', :autofocus => true %>
+            <%= f.input :username, :required => true, :label => 'Brukernavn', :autofocus => true %>
+            <%= f.input :email, :required => true, :label => 'Epost', :autofocus => true %>
             <%= f.input :password, :label => 'Passord', :required => true %>
-            <%= f.input :password_confirmation,:label => 'Gjenta passord',  :required => true %>
-            <br />
+            <%= f.input :password_confirmation, :label => 'Gjenta passord', :required => true %>
+          </div>
+          <div class="control-group">
+
+
+          </div>
+          <div class="control-group">
             <%= f.button :submit, "Opprett meg som bruker", :class => 'btn btn-large btn-primary' %>
+          </div>
 
           </div>
       <% end %>
 
       <%= render "devise/shared/links" %>
 
-    </div>
-  </div>
+      </div>
+</div>
 </div>

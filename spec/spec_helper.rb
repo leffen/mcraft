@@ -3,6 +3,16 @@ ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'
+require 'database_cleaner'
+require 'shoulda'
+
+
+require 'capybara/rails'
+require 'capybara/rspec'
+
+require 'factory_girl'
+FactoryGirl.find_definitions
+
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
@@ -13,6 +23,17 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
 
 RSpec.configure do |config|
+
+  config.fail_fast = ENV['RSPEC_FAIL_FAST'] == "1"
+  config.mock_framework = :mocha
+  config.order = 'random'
+
+  config.treat_symbols_as_metadata_keys_with_true_values = true
+  config.filter_run :focus => true
+  config.run_all_when_everything_filtered = true
+
+
+
   # ## Mock Framework
   #
   # If you prefer to use mocha, flexmock or RR, uncomment the appropriate line:
@@ -23,6 +44,22 @@ RSpec.configure do |config|
 
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
+
+  config.before(:suite) do
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner[:active_record,{:connection => :test_second_db}].strategy = :transaction
+  end
+
+  config.before(:each) do
+    DatabaseCleaner.start
+    DatabaseCleaner[:active_record,{:connection => :test_second_db}].start
+  end
+
+#  config.after(:each) do
+#    DatabaseCleaner.clean
+#    DatabaseCleaner[:active_record,{:connection => :test_second_db}].clean
+#  end
+
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
@@ -39,4 +76,7 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = "random"
+
+  config.include Rails.application.routes.url_helpers
+
 end
