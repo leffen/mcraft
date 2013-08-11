@@ -1,13 +1,12 @@
 require_relative '../spec_helper'
 
 
-Capybara.current_driver = :rack_test
-
-describe "the sign up process", :type => :feature, :js => true do
+describe "the sign up process", :type => :feature, :js => false do
   let(:user) {FactoryGirl.create(:user)}
 
   it "signs a user up" do
     visit new_user_registration_path
+    puts current_path
     within("#register") do
       fill_in 'Fornavn', :with => user.first_name
       fill_in 'Brukernavn', :with => user.username
@@ -17,9 +16,9 @@ describe "the sign up process", :type => :feature, :js => true do
     end
     click_button 'Opprett meg som bruker'
     page.status_code.should be(200)
+    puts current_path
    # User.find_by( username: user.username).should exist
     expect(page).to have_content 'confirmation link has been sent'
   end
 end
 
-Capybara.current_driver = :webkit

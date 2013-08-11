@@ -14,9 +14,9 @@
             <%= f.input :password, :label => 'Passord', :required => true %>
             <%= f.input :password_confirmation, :label => 'Gjenta passord', :required => true %>
             <%= f.input :age, :required => false, :label => 'Alder', collection: 7..99 %>
-            <%= f.input :op_sys, :required => false, :label => 'Operativsystem', collection: ["Windows 7","Windows 8","Mac osx","Linux"]%>
+            <%= f.input :op_sys, :required => false,as: :radio_buttons, :label => 'Operativsystem', collection: ["Windows 7","Windows 8","Mac osx","Linux"]%>
             <%= f.input :code_experience, :required => false, :label => 'Kode erfaring'%>
-            <%= f.input :minecraft_experience, :required => false, :label => 'Minecraft erfaring', collection: ["liten","spillt litt","ekspert","modder"]%>
+            <%= f.input :minecraft_experience, :required => false,as: :radio_buttons, :label => 'Minecraft erfaring', collection:  [["liten",1],["litt",2],["ekspert",3],["modder",4]]%>
             <%= f.input :mobile_num, :required => false, :label => 'Mobil nummer'%>
             <%= f.input :parent_contact, :required => false, :label => 'Foresatt kontakt'%>
 

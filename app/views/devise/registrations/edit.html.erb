@@ -1,10 +1,15 @@
+<div class="container top_container">
+  <div class="row">
+    <div class="span8" id="register">
+
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put,:class => 'form-horizontal' }) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :email, :required => true, :autofocus => true %>
+  <div class="control-group">
+    <%= f.input :username,:disabled => true, :label => 'Brukernavn',:hint => 'Kan dessverre ikke endres' %>
+    <%= f.input :email, :required => true, :label => 'Epost',:autofocus => true %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
@@ -12,16 +17,29 @@
 
     <%= f.input :password, :autocomplete => "off", :hint => "leave it blank if you don't want to change it", :required => false %>
     <%= f.input :password_confirmation, :required => false %>
-    <%= f.input :current_password, :hint => "we need your current password to confirm your changes", :required => true %>
+    <br />
+
+    <%= f.input :age, :required => false, :label => 'Alder', collection: 7..99 %>
+    <%= f.input :op_sys, :required => false,as: :radio_buttons, :label => 'Operativsystem', collection: ["Windows 7","Windows 8","Mac osx","Linux"]%>
+    <%= f.input :code_experience, :required => false, :label => 'Kode erfaring'%>
+    <%= f.input :minecraft_experience, :required => false, :label => 'Minecraft erfaring', as: :radio_buttons, collection: [["liten",1],["litt",2],["ekspert",3],["modder",4]],:item_wrapper_class => 'inline' %>
+    <%= f.input :mobile_num, :required => false, :label => 'Mobil nummer'%>
+    <%= f.input :parent_contact, :required => false, :label => 'Foresatt kontakt'%>
+
+    <br />
+    <%= f.input :current_password, :hint => "For å lagre endringer må ditt nåværende passord oppgies", :label => 'Aktivt passord' ,:required => true %>
+
+    <br />
+    <%= f.button :submit, "Oppdater", :class => 'btn btn-large btn-primary' %>
+
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Update" %>
-  </div>
 <% end %>
 
-<h3>Cancel my account</h3>
 
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %></p>
+<%= link_to "Tilbake", :back %>
 
-<%= link_to "Back", :back %>
+    </div>
+  </div>
+</div>
+
