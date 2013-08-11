@@ -3,3 +3,13 @@
 Working application for the Kidsakoder tutorial in Fana 2013.
 
 
+=== Development
+
+This application is configured to use mailcatcher as development mail sender.
+To install:
+ gem install mailcatcher
+ mailcatcher
+ open http://localhost:1080 in a web browser
+
+
+

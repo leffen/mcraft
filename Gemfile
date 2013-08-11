@@ -31,7 +31,7 @@ gem "jquery-ui-rails"
 gem "bootstrap-sass", "~> 2.3.2.1"
 gem 'bourbon'
 gem "font-awesome-sass-rails", "~> 3.0.2.2"
-gem "simple_form"
+gem "simple_form","~> 3.0.0.rc"
 
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -66,6 +66,7 @@ end
 
 group :test do
   gem "capybara"
+  gem 'capybara-webkit'
   gem "capybara-email"
   gem "database_cleaner"
   gem "email_spec"

@@ -1,6 +1,6 @@
 <div class="container top_container">
   <div class="row">
-    <div class="span6">
+    <div class="span8" id="register">
 
       <h2>Registrering</h2>
 
@@ -8,20 +8,22 @@
           <%= f.error_notification %>
 
           <div class="control-group">
-            <%= f.input :username, :required => true, :label => 'Brukernavn', :autofocus => true %>
-            <%= f.input :email, :required => true, :label => 'Epost', :autofocus => true %>
+            <%= f.input :first_name, :required => true, :label => 'Fornavn', :autofocus => true %>
+            <%= f.input :username, :required => true, :label => 'Brukernavn' %>
+            <%= f.input :email, :required => true, :label => 'Epost' %>
             <%= f.input :password, :label => 'Passord', :required => true %>
             <%= f.input :password_confirmation, :label => 'Gjenta passord', :required => true %>
-          </div>
-          <div class="control-group">
+            <%= f.input :age, :required => false, :label => 'Alder', collection: 7..99 %>
+            <%= f.input :op_sys, :required => false, :label => 'Operativsystem', collection: ["Windows 7","Windows 8","Mac osx","Linux"]%>
+            <%= f.input :code_experience, :required => false, :label => 'Kode erfaring'%>
+            <%= f.input :minecraft_experience, :required => false, :label => 'Minecraft erfaring', collection: ["liten","spillt litt","ekspert","modder"]%>
+            <%= f.input :mobile_num, :required => false, :label => 'Mobil nummer'%>
+            <%= f.input :parent_contact, :required => false, :label => 'Foresatt kontakt'%>
 
-
-          </div>
-          <div class="control-group">
+            <br/>
             <%= f.button :submit, "Opprett meg som bruker", :class => 'btn btn-large btn-primary' %>
           </div>
 
-          </div>
       <% end %>
 
       <%= render "devise/shared/links" %>
