@@ -32,6 +32,7 @@ gem "bootstrap-sass", "~> 2.3.2.1"
 gem 'bourbon'
 gem "font-awesome-sass-rails", "~> 3.0.2.2"
 gem "simple_form","~> 3.0.0.rc"
+gem 'foreman'
 
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -90,4 +91,5 @@ group :test, :development do
   gem 'simplecov', require: false
   gem 'terminal-notifier-guard', require: false
   gem 'mocha', require: false
+  gem 'dotenv-rails'
 end
