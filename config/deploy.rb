@@ -33,11 +33,11 @@ namespace :deploy do
 
   desc "Symlinks shared config files"
   task :symlink_config, :roles => :web do
-    ['settings', 'database','thin'].each do |file_name|
-      shared_config_file = "#{deploy_to}/shared/config/#{file_name}.yml"
+    ['config/settings.yml', 'config/database.yml','config/thin.yml','.env'].each do |file_name|
+      shared_config_file = "#{deploy_to}/shared/#{file_name}"
       if remote_file_exists?(shared_config_file)
-        run "rm -f #{release_path}/config/#{file_name}.yml"
-        run "ln -nfs #{shared_config_file} #{release_path}/config/#{file_name}.yml"
+        run "rm -f #{release_path}/#{file_name}"
+        run "ln -nfs #{shared_config_file} #{release_path}/#{file_name}"
       end
     end
   end
