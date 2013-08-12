@@ -81,3 +81,4 @@ before "deploy:migrations", "deploy:symlink_config"
 before "deploy:db_setup",   "deploy:symlink_config"
 after "deploy", "deploy:cleanup" # keep only the last 5 releases
 after "deploy:finalize_update", "deploy:symlink_config"
+after "deploy:update_code", "deploy:migrate"
