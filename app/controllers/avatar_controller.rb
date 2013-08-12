@@ -1,7 +1,14 @@
 class AvatarController < ApplicationController
   def new
-    @uploader = User.new.avatar
-    @uploader.success_action_redirect = new_user_url
+    if params[:bucket]
+
+
+
+    end
+
+
+    @uploader = current_user.avatar
+    @uploader.success_action_redirect = request.url
   end
 
 end

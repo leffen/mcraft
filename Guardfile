@@ -1,4 +1,3 @@
-# Guard file for bsqk_summer project
 
 guard 'bundler' do
   watch('Gemfile')

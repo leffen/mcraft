@@ -1,4 +1,15 @@
-<%= direct_upload_form_for @uploader do |f| %>
-    <%= f.file_field :avatar %>
-    <%= f.submit %>
-<% end %>
+<div class="container top_container">
+  <div class="row">
+    <div class="span8" id="register">
+      <h1>Avatar</h1>
+
+      <%= image_path @avatar_image if @avatar_image %>
+
+      <%= direct_upload_form_for @uploader do |f| %>
+          <%= f.file_field :avatar %>
+          <%= f.submit %>
+      <% end %>
+
+    </div>
+  </div>
+</div>
