@@ -49,6 +49,11 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 # caching
 gem 'dalli'
 
+# Images
+gem 'carrierwave_direct', :git => "git://github.com/dwilkie/carrierwave_direct.git"
+gem 'carrierwave'
+
+
 
 group :development do
   gem 'guard'

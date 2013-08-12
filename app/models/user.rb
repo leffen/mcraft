@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
 
   after_save :dump_data
 
+  mount_uploader :avatar, AvatarUploader
+
 
   def dump_data
     puts "After_save #{self.attributes}\n   errors=#{errors.inspect}"
