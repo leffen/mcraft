@@ -1,21 +1,16 @@
 <div class="container-fluid top_container">
   <% if current_user %>
       <div class="row-fluid">
-        <div class="span12" id="new_image">
-
-          <%= direct_upload_form_for @uploader do |f| %>
+          <%= direct_upload_form_for @uploader, html: {:class=>"form-inline"} do |f| %>
               <Strong>Ny avatar:</strong> <%= f.file_field :image, :label => 'Velg fil' %>
-              <input id="Content-Type" name="Content-Type" type="hidden" value="image/jpeg">
-                <%= f.submit "Opprett avtar" %>
+                <%= f.submit "Opprett avtar" , class: "btn btn-primary" %>
           <% end %>
-
-        </div>
       </div>
   <% end %>
 
   <div class="row-fluid">
     <div class="span12" id="gallery">
-      <h1>Avatar Gallery</h1>
+      <h1>Galleri</h1>
 
       <div class="demo-wrapper">
         <ul class="avtar_items">

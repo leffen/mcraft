@@ -2,7 +2,7 @@ class AvatarController < ApplicationController
   before_action :require_login, :except => :index
 
   def index
-    @avatars = Avatar.all
+    @avatars = Avatar.all.shuffle
     if current_user
       @uploader = Avatar.new.image
       @uploader.success_action_redirect = new_avatar_url
