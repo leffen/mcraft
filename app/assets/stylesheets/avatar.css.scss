@@ -1,19 +1,21 @@
-
-
-.demo-wrapper {
-  padding: 30px
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+  list-style-type: none
 }
 
-.portfolio-items {
-  height: 400px;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  white-space: nowrap;
-  margin-bottom: 30px;
-  position: relative
+
+
+.avtar_items {
+  margin-bottom: 10px;
+  position: relative;
 }
 
-.portfolio-items > li {
+.avtar_items > li {
   display: inline-block;
   vertical-align: top
 }
@@ -21,7 +23,7 @@
 .item {
   width: 300px;
   height: 202px;
-  margin: 150px 20px 0;
+  margin: 30px 20px 0;
   padding: 5px;
   border-radius: 2px;
   background-color: white;
@@ -39,51 +41,11 @@
   transition: all .3s ease, opacity 2s ease,  top 1s ease
 }
 
-.item:nth-child(even) {
-  margin-top: 100px
-}
-
-.item:hover {
-  height: 270px;
-  padding: 15px;
-  -webkit-transform: translateY(-68px);
-  -ms-transform: translateY(-68px);
-  -o-transform: translateY(-68px);
-  transform: translateY(-68px)
-}
-
-.item:hover .date {
+.item:hover .avatar_name {
   -webkit-transform: translate3d(0, 61px, 0);
   -ms-transform: translate3d(0, 61px, 0);
   -o-transform: translate3d(0, 61px, 0);
   transform: translate3d(0, 61px, 0)
-}
-
-.item:hover figcaption {
-  -webkit-animation: show .25s ease-in .120s forwards;
-  -o-animation: show .25s ease-in .120s forwards;
-  animation: show .25s ease-in .120s forwards
-}
-
-.item:hover p:nth-of-type(1) span {
-  -webkit-animation: slideOut .25s ease-out .15s forwards;
-  -o-animation: slideOut .25s ease-out .15s forwards;
-  animation: slideOut .25s ease-out .15s forwards
-}
-
-.item:hover p:nth-of-type(2) span {
-  -webkit-animation: slideOut .2s  ease-out .3s forwards;
-  -o-animation: slideOut .2s  ease-out .3s forwards;
-  animation: slideOut .2s  ease-out .3s forwards
-}
-
-.item:hover .view {
-  height: 170px
-}
-
-.item:hover .view img {
-  top: -20px;
-  left: -20px
 }
 
 .falldown {
@@ -146,9 +108,9 @@ figcaption a {
   color: #CC320F
 }
 
-.date {
+.avatar_name {
   z-index: 1;
-  width: 50px;
+  width: 100px;
   height: 30px;
   line-height: 30px;
   color: #fff;

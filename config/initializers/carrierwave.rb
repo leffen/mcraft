@@ -6,4 +6,5 @@ CarrierWave.configure do |config|
       :region                 => 'eu-west-1'
   }
   config.fog_directory  = ENV['ASD'] # bucket name
+  config.will_include_content_type = true
 end
