@@ -1,14 +1,10 @@
-<div class="container top_container">
-  <div class="row">
-    <div class="span8" id="register">
-      <h1>Avatar</h1>
+<div class="container-fluid top_container">
+  <div class="row" >
+    <div class="span12" id="gallery">
 
-      <%= image_path @avatar_image if @avatar_image %>
+    <h1>Add a Avatar</h1>
 
-      <%= direct_upload_form_for @uploader do |f| %>
-          <%= f.file_field :avatar %>
-          <%= f.submit %>
-      <% end %>
+<%= render 'form' %>
 
     </div>
   </div>

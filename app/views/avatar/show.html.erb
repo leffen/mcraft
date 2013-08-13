@@ -1,0 +1,17 @@
+<div class="container-fluid top_container">
+  <div class="row">
+    <div class="span12" id="gallery">
+
+      <h1><%= @avatar.name %></h1>
+
+      <p><%= image_tag @avatar.image_url %></p>
+
+      <p>
+        <%= link_to "Edit", edit_avatar_path(@avatar) %> |
+        <%= link_to "Destroy", @avatar, :confirm => 'Are you sure?', :method => :delete %> |
+        <%= link_to "Back to Paintings", avatar_path %>
+      </p>
+
+    </div>
+  </div>
+</div>

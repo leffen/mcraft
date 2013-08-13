@@ -1,0 +1,7 @@
+<div class="image">
+  <div class="name"><%= avatar.name %></div>
+  <div class="actions">
+    <%= link_to "edit", edit_avatar_path(avatar) %> |
+    <%= link_to "remove", avatar, data:{:confirm => 'Are you sure?'}, :method => :delete %>
+  </div>
+</div>

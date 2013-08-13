@@ -1,0 +1,25 @@
+<div class="container-fluid top_container">
+  <div class="row">
+    <div class="span8" id="gallery">
+
+
+      <h1>Avatar Gallery</h1>
+
+      <div id="paintings">
+        <%= render partial: "avatar", collection: @avatars %>
+      </div>
+      <div class="clear"></div>
+    </div>
+      <div class="span4" id="new_image">
+      <h1>Ny avatar</h1>
+        <br/>
+
+      <%= direct_upload_form_for @uploader do |f| %>
+          <p><%= f.file_field :image, :label=>'Velg fil' %></p>
+
+          <p><%= f.submit "Opprett avtar" %></p>
+      <% end %>
+
+    </div>
+  </div>
+</div>
