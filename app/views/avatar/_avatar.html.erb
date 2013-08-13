@@ -1,7 +1,15 @@
-<div class="image">
-  <div class="name"><%= avatar.name %></div>
-  <div class="actions">
-    <%= link_to "edit", edit_avatar_path(avatar) %> |
-    <%= link_to "remove", avatar, data:{:confirm => 'Are you sure?'}, :method => :delete %>
-  </div>
-</div>
+<li class="item">
+  <figure>
+    <div class="view">
+      <%= image_tag(avatar.image_url) %>
+    </div>
+    <figcaption>
+      <p><span> <%= link_to "edit", edit_avatar_path(avatar) %></span></p>
+      <p><span> <%= link_to "remove", avatar, data:{:confirm => 'Are you sure?'}, :method => :delete %></span></p>
+    </figcaption>
+  </figure>
+  <div class="date"><%= avatar.name %></div>
+</li>
+
+
+
