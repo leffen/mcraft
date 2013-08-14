@@ -31,18 +31,17 @@ describe RegistrationsController do
   describe "PUT 'update'" do
     before(:each) do
       @user = FactoryGirl.create(:user)
-      @user.confirm! # or set a confirmed_at inside the factory. Only necessary if you are using the confirmable module
+      @user.confirm!
       sign_in @user
     end
 
     describe "Success" do
 
       it "should change the user's display name" do
-        puts "Before put"
         @attr = {:email => @user.email, :first_name => "Test1", :current_password => @user.password}
         put :update, :id => @user, :user => @attr
-        puts @user.errors.messages
-        @user.first_name.should == @attr[:first_name]
+        u = User.find(@user.id)
+        u.first_name.should == @attr[:first_name]
       end
 
     end

@@ -1,12 +1,15 @@
 require 'spec_helper'
 
 describe User do
+  let(:user) { FactoryGirl.create(:user)}
 
-  it "should be able to add a new record" do
+  it "should be savable" do
+    user.save
 
-    u = FactoryGirl.create(:user)
-    u.save
+  end
 
+  it "should be confirmable" do
+    user.confirm!
   end
 
 

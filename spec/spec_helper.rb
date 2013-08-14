@@ -5,6 +5,7 @@ require 'rspec/rails'
 require 'rspec/autorun'
 require 'database_cleaner'
 require 'shoulda'
+require 'faker'
 
 
 require 'capybara/rails'
@@ -50,6 +51,7 @@ RSpec.configure do |config|
   config.infer_base_class_for_anonymous_controllers = false
 
   config.include Rails.application.routes.url_helpers
+  config.extend ControllerMacros, :type => :controller
 
 end
 

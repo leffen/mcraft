@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   validates :email, :presence => true, :uniqueness => true, :length => { :minimum => 5}
   validates :first_name, :presence => true, :uniqueness => false, :length => { :minimum => 2}
 
-  after_save :dump_data
+  # after_save :dump_data
 
   mount_uploader :avatar, AvatarUploader
 
