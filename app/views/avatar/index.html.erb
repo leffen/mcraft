@@ -2,7 +2,8 @@
   <% if current_user %>
       <div class="row-fluid">
           <%= direct_upload_form_for @uploader, html: {:class=>"form-inline"} do |f| %>
-              <Strong>Ny avatar:</strong> <%= f.file_field :image, :label => 'Velg fil' %>
+            <input type="hidden" name="Content-Type" value="image/jpeg">
+              <Strong>Ny avatar :</strong> <%= f.file_field :image, :value => 'Velg fil' %>
                 <%= f.submit "Opprett avtar" , class: "btn btn-primary" %>
           <% end %>
       </div>

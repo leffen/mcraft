@@ -7,9 +7,9 @@
       <p><%= image_tag @avatar.image_url %></p>
 
       <p>
-        <%= link_to "Edit", edit_avatar_path(@avatar) %> |
-        <%= link_to "Destroy", @avatar, :confirm => 'Are you sure?', :method => :delete %> |
-        <%= link_to "Back to Paintings", avatar_index_path %>
+        <%= link_to "Endre", edit_avatar_path(@avatar) %> |
+        <%= link_to "Slett", @avatar, :confirm => 'Er du sikker?', :method => :delete %> |
+        <%= link_to "Tilbake til avatar liste", avatar_index_path %>
       </p>
 
     </div>
