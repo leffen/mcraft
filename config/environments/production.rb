@@ -78,5 +78,17 @@ Mcraft::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.default_url_options = { :host =>ENV['MAIL_HOST'] }
+
+  config.action_mailer.smtp_settings = {
+      :address => 'smtp.mandrillapp.com',
+      :port => '587',
+      :domain => ENV['DOMAIN'],
+      :user_name => ENV['MU'],
+      :password => ENV['MA']
+  }
+
+  ActionMailer::Base.delivery_method = :smtp
+
+
 end
