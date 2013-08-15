@@ -90,5 +90,7 @@ Mcraft::Application.configure do
 
   ActionMailer::Base.delivery_method = :smtp
 
+  puts "Domain=#{ENV['DOMAIN']}"
+
 
 end
