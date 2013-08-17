@@ -33,6 +33,10 @@ gem 'bourbon'
 gem "font-awesome-sass-rails", "~> 3.0.2.2"
 gem "simple_form","~> 3.0.0.rc"
 gem 'foreman'
+gem 'cancan'
+
+# Application config
+gem 'hashugar', github: 'alex-klepa/hashugar'
 
 
 gem 'dotenv-rails'

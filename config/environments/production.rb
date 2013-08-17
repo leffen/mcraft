@@ -13,6 +13,7 @@ Mcraft::Application.configure do
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
+  config.cache_store = :mem_cache_store
 
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
   # Add `rack-cache` to your Gemfile before enabling this.
@@ -45,8 +46,7 @@ Mcraft::Application.configure do
   # Set to :debug to see everything in the log.
   config.log_level = :info
 
-  # Prepend all log lines with the following tags.
-  # config.log_tags = [ :subdomain, :uuid ]
+  config.log_tags = [ :subdomain, :uuid, lambda {|req| Time.now}, :remote_ip ]
 
   # Use a different logger for distributed setups.
   # config.logger = ActiveSupport::TaggedLogging.new(SyslogLogger.new)
@@ -89,8 +89,6 @@ Mcraft::Application.configure do
   }
 
   ActionMailer::Base.delivery_method = :smtp
-
-  puts "Domain=#{ENV['DOMAIN']}"
 
 
 end

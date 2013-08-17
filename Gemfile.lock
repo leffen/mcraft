@@ -1,4 +1,10 @@
 GIT
+  remote: git://github.com/alex-klepa/hashugar.git
+  revision: fa8a8114c6243870a07a1716d6fee4f65a2171e7
+  specs:
+    hashugar (0.0.6)
+
+GIT
   remote: git://github.com/dwilkie/carrierwave_direct.git
   revision: c87c5d3225d0de51b73a0068e72240a50af35740
   specs:
@@ -49,6 +55,7 @@ GEM
       sass (>= 3.2.0)
       thor
     builder (3.1.4)
+    cancan (1.6.10)
     capistrano (2.15.5)
       highline
       net-scp (>= 1.0.0)
@@ -300,6 +307,7 @@ DEPENDENCIES
   binding_of_caller
   bootstrap-sass (~> 2.3.2.1)
   bourbon
+  cancan
   capistrano
   capistrano-recipes
   capistrano_colors
@@ -322,6 +330,7 @@ DEPENDENCIES
   guard
   guard-bundler
   guard-rspec
+  hashugar!
   headless
   jbuilder (~> 1.2)
   jquery-rails
