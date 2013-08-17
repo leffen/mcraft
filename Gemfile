@@ -77,6 +77,7 @@ group :test do
   gem "capybara"
   gem 'capybara-webkit'
   gem "capybara-email"
+  gem 'headless'
   gem "database_cleaner"
   gem "email_spec"
   gem "shoulda-matchers"

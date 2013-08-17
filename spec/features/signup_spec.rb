@@ -17,7 +17,7 @@ describe "the sign up process", :type => :feature, :js => false do
     click_button 'Opprett meg som bruker'
     page.status_code.should be(200)
    # todo find out why capybara redirects to wrong page.
-   # puts current_path
+   puts current_path
    # User.find_by( username: user.username).should exist
    # expect(page).to have_content 'confirmation link has been sent'
   end

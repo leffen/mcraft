@@ -26,6 +26,14 @@ ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
 
 RSpec.configure do |config|
 
+  config.include Capybara::DSL, type: :request
+
+  config.before(:suite) do
+    # Use the headless gem to manage your Xvfb server
+    # Do not destroy X server incase another process is using it
+    Headless.new(:destroy_on_exit => false).start
+  end
+
   config.fail_fast = ENV['RSPEC_FAIL_FAST'] == "1"
   config.mock_framework = :mocha
   config.order = 'random'
