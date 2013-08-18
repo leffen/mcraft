@@ -3,7 +3,7 @@
       <div class="row-fluid">
           <%= direct_upload_form_for @uploader, html: {:class=>"form-inline"} do |f| %>
             <input type="hidden" name="Content-Type" value="image/jpeg">
-            <input type="hidden" name="Cache-Control" value="max-age=315576000, public">
+            <input type="hidden" name="Cache-Control" value="max-age=315576000">
               <Strong>Ny avatar :</strong> <%= f.file_field :image, :value => 'Velg fil' %>
                 <%= f.submit "Opprett avtar" , class: "btn btn-primary" %>
           <% end %>
