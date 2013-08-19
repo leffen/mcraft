@@ -9,7 +9,7 @@ namespace :thin do
   desc "Setup app configuration with thin as web server"
   task :setup, roles: :web do
     unless remote_file_exists?("/etc/init.d/thin_#{application}")
-      template "thin_service.sh", "/tmp/thin_service.sh"
+      template "thin_service.sh.erb", "/tmp/thin_service.sh"
       run "chmod +x /tmp/thin_service.sh"
       run "#{sudo} cp /tmp/thin_service.sh /etc/init.d/thin_#{application}"
       run "#{sudo} update-rc.d -f thin_#{application} defaults;"
