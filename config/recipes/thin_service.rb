@@ -16,6 +16,6 @@ namespace :thin do
     end
   end
 
-#  after "deploy:finalize_update", "thin:setup"
+ after "deploy:finalize_update", "thin:setup"
 
 end
