@@ -11,6 +11,8 @@ set :application, "mcraft"
 set :scm, :git
 set :repository, "git@github.com:leffen/mcraft.git"
 set :branch, "master"
+set :user, ENV['DEPLOY_USER']
+
 
 
 default_run_options[:pty] = true
@@ -22,7 +24,9 @@ set :use_sudo, false
 default_run_options[:shell] = '/bin/bash --login'
 
 
+load "config/recipes/base"
 load "config/recipes/linux_common"
+load "config/recipes/thin_service"
 load 'deploy/assets'
 
 namespace :deploy do
