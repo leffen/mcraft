@@ -96,6 +96,7 @@ group :development do
 end
 
 group :test, :development do
+  gem 'sqlite3'
   gem "rspec-rails"
   gem 'fabrication', require: false
   gem 'rb-fsevent', require: RUBY_PLATFORM =~ /darwin/i ? 'rb-fsevent' : false

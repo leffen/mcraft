@@ -273,6 +273,7 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
+    sqlite3 (1.3.8)
     terminal-notifier-guard (1.5.3)
     therubyracer (0.11.4)
       libv8 (~> 3.11.8.12)
@@ -349,6 +350,7 @@ DEPENDENCIES
   shoulda-matchers
   simple_form (~> 3.0.0.rc)
   simplecov
+  sqlite3
   terminal-notifier-guard
   therubyracer
   thin
