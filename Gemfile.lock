@@ -283,6 +283,8 @@ GEM
       multi_json
       simplecov-html (~> 0.8.0)
     simplecov-html (0.8.0)
+    simplecov-rcov (0.2.3)
+      simplecov (>= 0.4.1)
     slop (3.4.7)
     spork (1.0.0rc4)
     sprockets (2.10.1)
@@ -364,7 +366,6 @@ DEPENDENCIES
   rails (= 4.0.2)
   rails_best_practices
   rb-fsevent
-  rb-inotify (~> 0.9)
   rspec-rails
   ruby-prof
   sass-rails (~> 4.0.0)
@@ -373,6 +374,7 @@ DEPENDENCIES
   shoulda-matchers
   simple_form (~> 3.0.0.rc)
   simplecov
+  simplecov-rcov
   sqlite3
   terminal-notifier-guard
   therubyracer

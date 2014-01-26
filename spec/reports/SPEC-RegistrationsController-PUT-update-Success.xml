@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="RegistrationsController PUT 'update' Success" tests="1" time="0.056302" failures="0" errors="0" skipped="0">
+  <testcase name="RegistrationsController PUT 'update' Success should change the user's display name" time="0.055825">
+  </testcase>
+  <system-out>
+  </system-out>
+  <system-err>
+  </system-err>
+</testsuite>

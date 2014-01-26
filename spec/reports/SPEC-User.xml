@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="User" tests="2" time="0.148616" failures="0" errors="0" skipped="0">
+  <testcase name="User should be savable" time="0.118476">
+  </testcase>
+  <testcase name="User should be confirmable" time="0.029625">
+  </testcase>
+  <system-out>
+  </system-out>
+  <system-err>
+  </system-err>
+</testsuite>

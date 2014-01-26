@@ -12,10 +12,14 @@ require 'capybara/poltergeist'
 
 require 'factory_girl'
 
+require 'simplecov'
+require 'simplecov-rcov'
+SimpleCov.formatter = SimpleCov::Formatter::RcovFormatter
+SimpleCov.start
+
 
 ENV['RAILS_ENV'] ||= 'test'
 
-require 'simplecov' unless ENV['DRB']
 require File.expand_path('../../config/environment', __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'

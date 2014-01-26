@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Avatar" tests="2" time="0.019713" failures="0" errors="0" skipped="0">
+  <testcase name="Avatar savable" time="0.013479">
+  </testcase>
+  <testcase name="Avatar findable" time="0.005814">
+  </testcase>
+  <system-out>
+  </system-out>
+  <system-err>
+  </system-err>
+</testsuite>

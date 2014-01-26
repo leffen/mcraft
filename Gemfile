@@ -90,10 +90,16 @@ group :test, :development do
   gem 'rails_best_practices'
   gem 'sqlite3'
   gem 'fabrication', require: false
-  gem 'rb-fsevent', require: false
-  gem 'rb-inotify', '~> 0.9', require: false
+
+  case RUBY_PLATFORM
+    when /darwin/
+      gem 'rb-fsevent'
+    when /linux/
+      gem 'rb-inotify'
+  end
   gem 'shoulda', require: false
   gem 'simplecov', require: false
+  gem 'simplecov-rcov', require: false
   gem 'terminal-notifier-guard', require: false
   gem 'mocha', require: false
 end

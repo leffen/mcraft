@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="RegistrationsController POST 'create' success" tests="1" time="0.827983" failures="0" errors="0" skipped="0">
+  <testcase name="RegistrationsController POST 'create' success should create a user" time="0.827515">
+  </testcase>
+  <system-out>
+after_inactive_sign_up_path_for
+  </system-out>
+  <system-err>
+  </system-err>
+</testsuite>

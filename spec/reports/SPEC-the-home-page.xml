@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="the home page" tests="1" time="2.666751" failures="0" errors="0" skipped="0">
+  <testcase name="the home page should be able show the homepage without errors" time="2.666187">
+  </testcase>
+  <system-out>
+  </system-out>
+  <system-err>
+  </system-err>
+</testsuite>

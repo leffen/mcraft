@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="AvatarController signed in as user" tests="3" time="0.162826" failures="0" errors="0" skipped="0">
+  <testcase name="AvatarController signed in as user should be able to list avatars" time="0.053595">
+  </testcase>
+  <testcase name="AvatarController signed in as user show avatar" time="0.052961">
+  </testcase>
+  <testcase name="AvatarController signed in as user create avatar" time="0.055428">
+  </testcase>
+  <system-out>
+  </system-out>
+  <system-err>
+  </system-err>
+</testsuite>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="HomeController GET 'index'" tests="1" time="0.017168" failures="0" errors="0" skipped="0">
+  <testcase name="HomeController GET 'index' returns http success" time="0.016723">
+  </testcase>
+  <system-out>
+  </system-out>
+  <system-err>
+  </system-err>
+</testsuite>
