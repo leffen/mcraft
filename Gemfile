@@ -59,10 +59,8 @@ gem 'carrierwave_direct', :git => "https://github.com/leffen/carrierwave_direct.
 gem 'carrierwave'
 
 group :development do
-  gem 'guard'
-  gem 'guard-rspec'
-  gem "guard-bundler"
-
+  gem "letter_opener", "~> 1.2.0"
+  gem "quiet_assets", "~> 1.0.2"
   gem "better_errors"
   gem "binding_of_caller"
 end
@@ -70,27 +68,34 @@ end
 
 
 group :test do
-  gem "database_cleaner"
+  gem 'ci_reporter'
   gem "email_spec"
   gem "shoulda-matchers"
   gem 'faker'
-  gem 'factory_girl'
   gem "poltergeist", "~> 1.5.0"
 end
 
-group :development do
-  gem "letter_opener", "~> 1.2.0"
-  gem "quiet_assets", "~> 1.0.2"
-end
 
 group :test, :development do
+  gem 'hirb'
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'guard-bundler'
+  gem 'guard-rspec'
+  gem 'guard-spork'
+  gem 'factory_girl_rails'
+  gem 'rspec-rails'
+  gem 'ruby-prof'
+  gem 'debugger'
+  gem 'rails_best_practices'
   gem 'sqlite3'
-  gem "rspec-rails"
   gem 'fabrication', require: false
-  gem 'rb-fsevent', require: RUBY_PLATFORM =~ /darwin/i ? 'rb-fsevent' : false
-  gem 'rb-inotify', '~> 0.9', require: RUBY_PLATFORM =~ /linux/i ? 'rb-inotify' : false
+  gem 'rb-fsevent', require: false
+  gem 'rb-inotify', '~> 0.9', require: false
   gem 'shoulda', require: false
   gem 'simplecov', require: false
   gem 'terminal-notifier-guard', require: false
   gem 'mocha', require: false
 end
+
+
