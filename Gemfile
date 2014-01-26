@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0'
+gem 'rails', '4.0.2'
 
 # Use postgresql as the database for Active Record
 gem 'pg'
@@ -26,7 +26,6 @@ gem 'thin'
 gem 'devise', "3.0.1"
 
 
-gem 'jquery-rails'
 gem "jquery-ui-rails"
 gem "bootstrap-sass", "~> 2.3.2.1"
 gem 'bourbon'
@@ -37,7 +36,6 @@ gem 'cancan'
 
 # Application config
 gem 'hashugar', github: 'alex-klepa/hashugar'
-
 
 gem 'dotenv-rails'
 
@@ -60,16 +58,10 @@ gem 'dalli'
 gem 'carrierwave_direct', :git => "https://github.com/leffen/carrierwave_direct.git" # "git://github.com/dwilkie/carrierwave_direct.git"
 gem 'carrierwave'
 
-
-
 group :development do
   gem 'guard'
   gem 'guard-rspec'
   gem "guard-bundler"
-
-  gem 'capistrano_colors'
-  gem 'capistrano'
-  gem 'capistrano-recipes'
 
   gem "better_errors"
   gem "binding_of_caller"
