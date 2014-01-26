@@ -8,10 +8,6 @@ require 'shoulda'
 require 'faker'
 
 
-require 'capybara/rails'
-require 'capybara/rspec'
-require "capybara-webkit"
-
 require 'factory_girl'
 FactoryGirl.find_definitions
 
@@ -25,14 +21,6 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
 
 RSpec.configure do |config|
-
-  config.include Capybara::DSL, type: :request
-
-  config.before(:suite) do
-    # Use the headless gem to manage your Xvfb server
-    # Do not destroy X server incase another process is using it
-    Headless.new(:destroy_on_exit => false).start
-  end
 
   config.fail_fast = ENV['RSPEC_FAIL_FAST'] == "1"
   config.mock_framework = :mocha
@@ -60,9 +48,5 @@ RSpec.configure do |config|
 
   config.include Rails.application.routes.url_helpers
   config.extend ControllerMacros, :type => :controller
-
 end
 
-#Capybara.default_host = '127.0.0.1:3001'
-Capybara.run_server = true
-Capybara.javascript_driver = :webkit

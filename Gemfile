@@ -49,7 +49,7 @@ group :doc do
 end
 
 # Use ActiveModel has_secure_password
-gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.1.2'
 
 # caching
 gem 'dalli'
@@ -70,10 +70,6 @@ end
 
 
 group :test do
-  gem "capybara"
-  gem 'capybara-webkit'
-  gem "capybara-email"
-  gem 'headless'
   gem "database_cleaner"
   gem "email_spec"
   gem "shoulda-matchers"
@@ -82,9 +78,8 @@ group :test do
 end
 
 group :development do
-  gem "letter_opener", "~> 1.1.1"
+  gem "letter_opener", "~> 1.2.0"
   gem "quiet_assets", "~> 1.0.2"
-
 end
 
 group :test, :development do
