@@ -7,6 +7,9 @@ require 'database_cleaner'
 require 'shoulda'
 require 'faker'
 
+require 'capybara/rails'
+require 'capybara/poltergeist'
+
 
 require 'factory_girl'
 FactoryGirl.find_definitions
@@ -34,8 +37,8 @@ RSpec.configure do |config|
 
 
   config.before(:suite) do
-    DatabaseCleaner.strategy = :transaction
-    DatabaseCleaner[:active_record,{:connection => :test_second_db}].strategy = :transaction
+    DatabaseCleaner.strategy = :truncation
+    DatabaseCleaner[:active_record,{:connection => :test_second_db}].strategy = :truncation
   end
 
   config.before(:each) do
@@ -48,5 +51,21 @@ RSpec.configure do |config|
 
   config.include Rails.application.routes.url_helpers
   config.extend ControllerMacros, :type => :controller
+end
+
+
+Capybara.default_driver = :poltergeist
+Capybara.javascript_driver = :poltergeist
+
+class ActionDispatch::IntegrationTest
+  include Capybara::DSL
+
+  setup do
+    Capybara.reset!
+  end
+
+  teardown do
+    Capybara.reset!
+  end
 end
 

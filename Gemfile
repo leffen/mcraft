@@ -23,7 +23,7 @@ gem 'jquery-rails'
 
 gem 'therubyracer', require: 'v8'
 gem 'thin'
-gem 'devise', "3.0.1"
+gem 'devise', "3.2.2"
 
 
 gem "jquery-ui-rails"
@@ -41,7 +41,7 @@ gem 'dotenv-rails'
 
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.2'
+gem 'jbuilder', '~> 2.0.2'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -75,6 +75,7 @@ group :test do
   gem "shoulda-matchers"
   gem 'faker'
   gem 'factory_girl'
+  gem "poltergeist", "~> 1.5.0"
 end
 
 group :development do

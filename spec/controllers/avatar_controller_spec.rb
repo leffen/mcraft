@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe AvatarController do
-  let(:avatar) { FactoryGirl.create(:random_avatar) }
+  let!(:avatar) { FactoryGirl.create(:random_avatar) }
   let(:avatar_attrs) { FactoryGirl.attributes_for(:random_avatar) }
 
   context "signed in as user" do
